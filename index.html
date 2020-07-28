@@ -92,24 +92,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="我的第一篇博客"><a href="#我的第一篇博客" class="headerlink" title="我的第一篇博客"></a>我的第一篇博客</h2><p>这是我的第一篇技术性博客，该说些什么好叻，不如就教大家怎么搭建自己的博客吧！<br>我用的是GitHub pages和<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a> ,Hexo是一个快速、简洁且高效的博客框架  </p>
+        <h2 id="个人博客的快速搭建"><a href="#个人博客的快速搭建" class="headerlink" title="个人博客的快速搭建"></a>个人博客的快速搭建</h2><p>这是我的第一篇技术性博客，该说些什么好叻，不如就教大家怎么搭建自己的博客吧！<br>我用的是GitHub pages和<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a> ,Hexo是一个快速、简洁且高效的博客框架  </p>
 <h3 id="使用GitHub-page的原因"><a href="#使用GitHub-page的原因" class="headerlink" title="使用GitHub page的原因"></a>使用GitHub page的原因</h3><ol>
 <li>这是静态网页，虽然刚开始进去的时候比较慢，但是进入界面之后页面跳转就很快咯！</li>
-<li>纯白嫖，咋也不花钱，不用买服务器，很自由的一个博客，还可以自己设计主题，当然也能用别人做好的，在Hexo的Themes里面有很多很好看的哦！</li>
+<li>纯白嫖，咋也不花钱，不用买服务器，很自由的一个博客，还可以自己设计主题，当然也能用别人做好的，在Hexo的<strong>Themes</strong>里面有很多很好看的哦！</li>
 <li>域名可以自己起，我的域名太正式了。。。</li>
-<li>数据绝对安全，毕竟GitHub嘛，全球最大的同性交友网站哈哈哈！还能控制历史版本，也能恢复任意版本！<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3></li>
-<li>GitHub准备</li>
+<li>数据绝对安全，毕竟GitHub嘛，全球最大的同性交友网站哈哈哈！还能控制历史版本，也能恢复任意版本！<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><h4 id="GitHub准备"><a href="#GitHub准备" class="headerlink" title="GitHub准备"></a>GitHub准备</h4></li>
 </ol>
 <ul>
-<li>git，git操作命令不熟悉可以去B站补补课</li>
-<li>一个GitHub账号</li>
-<li>一个新建的GitHub仓库，名字要是dindindin.github.io  dindindin是你自己起的名儿，爱起啥名儿起啥名儿。  </li>
-</ul>
-<ol start="2">
-<li>必要的软件</li>
-</ol>
-<ul>
-<li><p>安装node.js、npm，Hexo，安装的时候这个npm的时候如果出现问题，就本地全局都安装一遍，然后把npm的全局路径加到系统变量的path中。<br>Windows用户建议使用程序安装<a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a>，$ npm install   这是安装npm的命令，npm安装好就可以使用$npm install -g hexo-cil 安装Hexo</p>
+<li><p>git，git操作命令不熟悉可以去B站补补课</p>
+</li>
+<li><p>一个GitHub账号</p>
+</li>
+<li><p>一个新建的GitHub仓库，名字要是<strong>dindindin.github.io  dindindin</strong>是你自己起的名儿，爱起啥名儿起啥名儿。  </p>
+<h4 id="必要的软件"><a href="#必要的软件" class="headerlink" title="必要的软件"></a>必要的软件</h4></li>
+<li><p>安装node.js、npm，Hexo，安装的时候这个npm的时候如果出现问题，就本地全局都安装一遍，然后把npm的全局路径加到系统变量的path中。<br>Windows用户建议使用程序安装<a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a>，<code>$ npm install</code> 这是安装npm的命令，npm安装好就可以使用<code>$npm install -g hexo-cil</code>安装Hexo</p>
 </li>
 <li><p>然后当然要有一个编辑器啦，随便一个就行。</p>
 </li>
@@ -118,17 +115,24 @@
 <li>Setup</li>
 </ol>
 <ul>
-<li><p>安装好Hexo后，自己找一个合适的位置按住Shift，鼠标右键打开Powershell，Windows是这个，别的系统不清楚<br>  $ hexo init <folder>  这是初始化文件夹的命令，这个folder是你自己给你网站文件取的名字<br>  $ cd <folder>  进你创建的文件<br>  $ npm install  安装npm</p>
-</li>
-<li><p>用你自己的编辑器打开你建好的网站文件，找到_config.yml文件，修改配置<br>  title: 蒋超的博客<br>  subtitle: ‘蒋超的技术博客’<br>  description: ‘技术博客，编程，学习’  这是搜索引擎能搜索到的，这些关键字可以让别人容易搜索到<br>  author: JC  这当然是作者名儿啦<br>  url: <a href="https://jc-artisan.github.io">https://jc-artisan.github.io</a>  这个地址是用GitHub做的，你的仓库名儿是jc-artisan.github.io，jc-artisan这个是自己起的<br>  per_page: 10  一页多少条，这个自己看着设置就行</p>
-</li>
+<li><p>安装好Hexo后，自己找一个合适的位置按住Shift，鼠标右键打开Powershell，Windows是这个，别的系统不清楚</p>
+<pre><code>$ hexo init &lt;folder&gt;  这是初始化文件夹的命令，这个folder是你自己给你网站文件取的名字
+$ cd &lt;folder&gt;  进你创建的文件
+$ npm install  安装npm</code></pre></li>
+<li><p>用你自己的编辑器打开你建好的网站文件，找到<strong>*_config.yml</strong>文件，修改配置</p>
+<pre><code>title: 蒋超的博客
+subtitle: &apos;蒋超的技术博客&apos;
+description: &apos;技术博客，编程，学习&apos;  这是搜索引擎能搜索到的，这些关键字可以让别人容易搜索到
+author: JC  这当然是作者名儿啦
+url: https://jc-artisan.github.io  这个地址是用GitHub做的，你的仓库名儿是jc-artisan.github.io，jc-artisan这个是自己起的
+per_page: 10  一页多少条，这个自己看着设置就行</code></pre></li>
 </ul>
 <ol start="2">
-<li>接着在powershell里面建立自己的第一条博客<br> $ Hexo new “我的第一篇博客”<br>然后就去你打开的编辑器里面的source，sourse 是存放用户资源的地方，Markdown和HTML文件会被解析到public文件中，去其他文件则直接拷贝过去<br>在source里面你会看到你创建的博客的md文件，这是你编写博客的地方，使用markdown语言编写，<a href="https://www.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">markdown</a>是一种轻量级标记语言，很简单哦！</li>
+<li>接着在powershell里面建立自己的第一条博客<pre><code>$ Hexo new &quot;我的第一篇博客&quot;</code></pre>然后就去你打开的编辑器里面的source，sourse 是存放用户资源的地方，Markdown和HTML文件会被解析到public文件中，去其他文件则直接拷贝过去<br>在source里面你会看到你创建的博客的md文件，这是你编写博客的地方，使用markdown语言编写，<a href="https://www.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">markdown</a>是一种轻量级标记语言，很简单哦！</li>
 </ol>
 <ul>
 <li>现在就可以使用 <code>$ Hexo g</code>  去生成public文件</li>
-<li><code>Hexo server</code> 启动本地服务器 ，地址会自己出来的，这个端口号可以在_config.yml文件里面改，如果你有多个程序运行。<em>如果没有服务器功能，安装一下服务器就好了</em>       </li>
+<li><code>Hexo server</code> 启动本地服务器 ，地址会自己出来的，这个端口号可以在_config.yml文件里面改，如果你有多个程序运行。<strong>如果没有服务器功能，安装一下服务器就好了</strong>      </li>
 </ul>
 <ol start="3">
 <li>部署</li>
