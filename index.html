@@ -143,7 +143,7 @@ type: &apos;git&apos;  用的git，所以部署类型就写git
 repo: git@github.com:Self-madeboy/jc-artisan.github.io.git  这是你的git仓库
 branch: master  </code></pre></li>
 <li><a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener">hexo-deployer-git</a>的安装<pre><code>$ cnpm install hexo-deployer-git --save
- Hexo deploy  一键部署</code></pre><h3 id="最后是我踩的坑"><a href="#最后是我踩的坑" class="headerlink" title="最后是我踩的坑"></a>最后是我踩的坑</h3></li>
+Hexo deploy  一键部署</code></pre><h3 id="最后是我踩的坑"><a href="#最后是我踩的坑" class="headerlink" title="最后是我踩的坑"></a>最后是我踩的坑</h3></li>
 <li>首先就是这个cnpm的安装，这个老是出问题，我就本地全局咔咔一顿安装，然后还把cnpm的全局路径放在系统变量里面了，然后好了。</li>
 <li>然后是部署，兴冲冲的打开自己的博客，结果发现404，然后去自己建的git仓库的设置里面找到GitHub pages里面看到已经建立了，然后有个链接，点那个链接，就是你的博客</li>
 <li>我以为大功告成的时候，出来的页面没有css效果，我真是****然后发现是root没有写对，这个要写你的仓库名儿<pre><code>url: https://jc-artisan.github.io
