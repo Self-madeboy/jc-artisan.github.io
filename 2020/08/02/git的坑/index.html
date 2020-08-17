@@ -5,17 +5,17 @@
   
 
   
-  <title>Maven  | 小蒋的技术博客园</title>
+  <title>git的坑 | 小蒋的技术博客园</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录maven的一些操作，设置，当然免不了还有坑首先 maven能 解决的问题 解决jar包的冲突，控制版本，手动引入 编译代码，单元测试 部署项目   依赖管理，maven工程对 jar包的管理过程：把jar包放仓库里面，pom文件里面是jar包的坐标 一键：maven  tomcat:run maven的配置 配置环境变量在系统变量里面新建变量MAVEN_HOME 路径path%MAVEN_H">
+  <meta name="description" content="#Git 常用命令        git init 初始化本地仓库，把本地文件做成git可以管理的仓库        git status        git add .  相当于放缓存里面        git commit -m  “Message  “        git remote add origin #####  添加远端地址        git push -u origin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Maven ">
-<meta property="og:url" content="https://jc-artisan.github.io/2020/07/29/Maven/index.html">
+<meta property="og:title" content="git的坑">
+<meta property="og:url" content="https://jc-artisan.github.io/2020/08/02/git%E7%9A%84%E5%9D%91/index.html">
 <meta property="og:site_name" content="小蒋的技术博客园">
-<meta property="og:description" content="记录maven的一些操作，设置，当然免不了还有坑首先 maven能 解决的问题 解决jar包的冲突，控制版本，手动引入 编译代码，单元测试 部署项目   依赖管理，maven工程对 jar包的管理过程：把jar包放仓库里面，pom文件里面是jar包的坐标 一键：maven  tomcat:run maven的配置 配置环境变量在系统变量里面新建变量MAVEN_HOME 路径path%MAVEN_H">
+<meta property="og:description" content="#Git 常用命令        git init 初始化本地仓库，把本地文件做成git可以管理的仓库        git status        git add .  相当于放缓存里面        git commit -m  “Message  “        git remote add origin #####  添加远端地址        git push -u origin">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-29T12:38:20.000Z">
-<meta property="article:modified_time" content="2020-08-02T02:34:01.911Z">
+<meta property="article:published_time" content="2020-08-02T12:47:09.000Z">
+<meta property="article:modified_time" content="2020-08-03T03:29:06.655Z">
 <meta property="article:author" content="jc">
 <meta name="twitter:card" content="summary">
   
@@ -70,10 +70,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Maven" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-git的坑" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/jc-artisan.github.io/2020/07/29/Maven/" class="article-date">
-  <time datetime="2020-07-29T12:38:20.000Z" itemprop="datePublished">2020-07-29</time>
+    <a href="/jc-artisan.github.io/2020/08/02/git%E7%9A%84%E5%9D%91/" class="article-date">
+  <time datetime="2020-08-02T12:47:09.000Z" itemprop="datePublished">2020-08-02</time>
 </a>
     
   </div>
@@ -84,7 +84,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Maven 
+      git的坑
     </h1>
   
 
@@ -92,35 +92,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="记录maven的一些操作，设置，当然免不了还有坑"><a href="#记录maven的一些操作，设置，当然免不了还有坑" class="headerlink" title="记录maven的一些操作，设置，当然免不了还有坑"></a>记录maven的一些操作，设置，当然免不了还有坑</h1><h2 id="首先-maven能-解决的问题"><a href="#首先-maven能-解决的问题" class="headerlink" title="首先 maven能 解决的问题"></a>首先 maven能 解决的问题</h2><ol>
-<li>解决jar包的冲突，控制版本，手动引入</li>
-<li>编译代码，单元测试</li>
-<li>部署项目 </li>
-</ol>
-<p><strong>依赖管理，maven工程对 jar包的管理过程</strong>：把jar包放仓库里面，pom文件里面是jar包的坐标<br> <strong>一键</strong>：maven  tomcat:run</p>
-<h2 id="maven的配置"><a href="#maven的配置" class="headerlink" title="maven的配置"></a>maven的配置</h2><ol>
-<li>配置环境变量<br>在系统变量里面新建变量<pre><code>MAVEN_HOME
-路径</code></pre>path<pre><code>%MAVEN_HOME%\bin</code></pre><strong>怎么检查</strong>：maven  -v <pre><code>Default: ${user.home}/.m2/repository  这个是默认仓库的地址
-&lt;localRepository&gt;/path/to/local/repo&lt;/localRepository&gt; 这个是设置本地仓库的命令
-&lt;localRepository&gt;D:\Maven\MyJar&lt;/localRepository&gt; 例如，设置里面都是注释，要重新设置在注释外面</code></pre>公司里面叫<strong>私服</strong>或者远程仓库，联网的叫中央仓库<ol start="2">
-<li>maven 目录结构，也是规范</li>
-</ol>
-<strong>三大部分</strong> ：核心代码文件，配置文件，测试代码部分<pre><code>src/main/java 核心代码
-src/main/resources 配置文件
-src/test/java  测试代码
-src/test/resources 测试配置文件
-src/main/webapp  页面资源，js，cs，图片等资源</code></pre><ol start="3">
-<li>maven的常用命令<br> maven  clean 这个执行了以后，当前目录下的target目录就会清除掉，target里面是写编译后的Java文件，就是会删掉项目中的编译后文件<br> 接手别人的项目后，就用这条命令删除本地的编译文件<br> maven compile  编译该项目，生成本地target文件<br> maven  test 生成编译的测试文件，该命令还会同时生成target文件<br> maven package  打包命令<br> maven install 把项目的jar包安装在本地仓库</li>
-<li>maven 一键构建<br>编译–测试–打包–安装–发布  这是一套生命周期：默认设生命周期    还有站点生命周期<br>pom里面有插件，依赖和运行环境信息</li>
-<li>Idea集成本地maven<br>在maven设置里面设置本地maven目录，配置文件和仓库路径<br>runner 里面配置-DarchetypeCatalog=internal  本地有就找本地，不用去中央仓库找</li>
-</ol>
-</li>
-</ol>
+        <p>#Git 常用命令<br>        git init 初始化本地仓库，把本地文件做成git可以管理的仓库<br>        git status<br>        git add .  相当于放缓存里面<br>        git commit -m  “Message  “<br>        git remote add origin #####  添加远端地址<br>        git push -u origin master  推过去<br>        git commit  –amend –no–edit  追加修改，还是先git add .<br>        git push </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jc-artisan.github.io/2020/07/29/Maven/" data-id="ckd7cw7ky0000fgwc17khh3gl" class="article-share-link">Share</a>
+      <a data-url="https://jc-artisan.github.io/2020/08/02/git%E7%9A%84%E5%9D%91/" data-id="ckdxz81ca0000l4wcaozv4oif" class="article-share-link">Share</a>
       
       
     </footer>
@@ -129,19 +106,19 @@ src/main/webapp  页面资源，js，cs，图片等资源</code></pre><ol start=
     
 <nav id="article-nav">
   
-    <a href="/jc-artisan.github.io/2020/08/02/git%E7%9A%84%E5%9D%91/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/jc-artisan.github.io/2020/08/04/%E5%88%86%E5%B8%83%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          git的坑
+          分布式
         
       </div>
     </a>
   
   
-    <a href="/jc-artisan.github.io/2020/07/28/SpringBoot-%E8%BF%99%E5%B0%86%E4%BC%9A%E6%98%AF%E4%B8%80%E7%AF%87%E5%8F%88%E8%87%AD%E5%8F%88%E9%95%BF%E7%9A%84%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/jc-artisan.github.io/2020/07/29/Maven/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">SpringBoot,这将会是一篇又臭又长的技术博客</div>
+      <div class="article-nav-title">Maven </div>
     </a>
   
 </nav>
