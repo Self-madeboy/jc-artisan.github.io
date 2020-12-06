@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>数据库 | 小蒋的技术博客园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="排序案例：1 asc 升序  desc 降序 2 order by 子句支持单个字段，多个字段，表达式，函数，别名 3 order by 一般放在查询语句的后面，limit除外 案例：查询部门编号&gt;&#x3D;90  按入职时间排序 select *  from employees where  department_id &gt;&#x3D;90 order by hiredata asc ; 案例：按年薪">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库">
+<meta property="og:url" content="https://jc-artisan.github.io/2020/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
+<meta property="og:site_name" content="小蒋的技术博客园">
+<meta property="og:description" content="排序案例：1 asc 升序  desc 降序 2 order by 子句支持单个字段，多个字段，表达式，函数，别名 3 order by 一般放在查询语句的后面，limit除外 案例：查询部门编号&gt;&#x3D;90  按入职时间排序 select *  from employees where  department_id &gt;&#x3D;90 order by hiredata asc ; 案例：按年薪">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-13T02:13:48.000Z">
+<meta property="article:modified_time" content="2020-09-16T13:26:23.553Z">
+<meta property="article:author" content="jc">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/jc-artisan.github.io/atom.xml" title="小蒋的技术博客园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/jc-artisan.github.io/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/jc-artisan.github.io/" id="logo">小蒋的技术博客园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/jc-artisan.github.io/" id="subtitle">欢迎光临</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/jc-artisan.github.io/">Home</a>
+        
+          <a class="main-nav-link" href="/jc-artisan.github.io/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/jc-artisan.github.io/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jc-artisan.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-数据库" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/jc-artisan.github.io/2020/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="article-date">
+  <time datetime="2020-09-13T02:13:48.000Z" itemprop="datePublished">2020-09-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据库
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>排序案例：<pre><code>1 asc 升序  desc 降序
+2 order by 子句支持单个字段，多个字段，表达式，函数，别名
+3 order by 一般放在查询语句的后面，limit除外
+案例：查询部门编号&gt;=90  按入职时间排序
+select * 
+from employees
+where  department_id &gt;=90
+order by hiredata asc ;
+案例：按年薪的高低显示员工的信息和年薪
+select * , salary*12x(1+ifnull(commisson_pct,0)) 年薪
+from  employees 
+order by salary*12x(1+ifnull(commisson_pct,0)) desc;//可以用别名 年薪
+案例：按姓名的长度显示员工的姓名和工资
+select length(last_name)  字节长度，last_name,salary
+from employees
+order by length(last_name) desc;
+案例：查询员工信息，要求按工资升序，员工编号降序
+select *
+from employees 
+order by salary asc,employe_id desc;</code></pre></li>
+<li>常见函数 ：类似Java的方法，将逻辑封装在方法中，对外暴露方法名  隐藏了实现细节，提高代码重用性 </li>
+</ul>
+<ol>
+<li>调用方法 ：select 函数名（实参列表） from 表名</li>
+<li>特点：函数名，函数功能</li>
+<li>分类：单行函数（有返回值）  concat，length，ifnull ； 分组函数（主要做统计）/统计函数/聚合函数</li>
+</ol>
+<ul>
+<li><p>字符函数：<br>length：获取参数值得字节个数<br>concat：拼接字符串<br>upper lower：大小写<br>substr substring：substr（“李莫愁爱上了陆展元”，6）输出：了陆展元 <em>索引从1开始</em>  substr（“李莫愁爱上了陆展元”，1,3）输出：李莫愁  3 是字符长度</p>
+<pre><code>案例：姓名中首字符大写，其他小写，用_拼接
+select concat(upper(substr(last_name,1,1)),&quot;_&quot;,lower(substr(last_name,2))) from employees</code></pre><p>instr ： select instr(“杨不悔爱上了殷六侠”,“殷六侠”) 返回子串第一次出现的索引，找不到返回0<br>trim： select trim（a from “aaaa张翠山AAAA“）  去掉前后的a<br>Lpad：select Lpad (“殷素素”,10,”*”)  用指定字符左填充   rpad右填充<br>replace：select replace(“张无忌爱上了周芷若”.”周芷若”,”赵敏”)</p>
+</li>
+<li><p>数学函数<br>round 四舍五入</p>
+</li>
+<li><p>日期函数<br>now() 返回当前系统时间  select now();<br>str_to_data(“1999-09-21”,”%y-%m-%d”) 按自己想要的格式返回日期字符串</p>
+</li>
+</ul>
+<p>curdata() 返回系统当期日期，不包含时间<br>其他函数 ：version（） database（）<br>流程控制函数：<br>            if函数： if else 的效果<br>            select  last_name,commission_pact is null,”没奖金，呵呵”，”有奖金，嘻嘻”） from employees<br>            case :1 java的switch case 的效果<br>            案例：查询员工工资 要求：部门号==30，实现的工资为1.1倍 部门号==40，实现的工资为1.2倍 ….<br>            select salary 原始工资 ，depart_id<br>            case depart_id<br>            when 30 then salary*1.1 ;<br>            ….<br>            else salary<br>            end</p>
+<pre><code>多重if：
+case  什么都不写
+when   条件一  then  要显示的值或者语句
+when   条件二  then  要显示的值或者语句
+......
+else 要显示的值或者语句
+end </code></pre><p> 分组函数（主要做统计）/统计函数/聚合函数：sum ，avg，max，min，count  都可以忽略null<br>     sum avg 一般用于处理数值型   max min count 可以处理任何类型<br>            案例：查询哪个部门的员工数&gt;2<br>            select count(<em>),department_id<br>            from employees<br>            group by depart_id<br>            having count(</em>)&gt;2;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jc-artisan.github.io/2020/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/" data-id="ckicgr9dy0000d4wchwsp8wzz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/jc-artisan.github.io/2020/08/04/%E5%88%86%E5%B8%83%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">分布式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/07/">July 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/jc-artisan.github.io/2020/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+          </li>
+        
+          <li>
+            <a href="/jc-artisan.github.io/2020/08/04/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a>
+          </li>
+        
+          <li>
+            <a href="/jc-artisan.github.io/2020/08/02/git%E7%9A%84%E5%9D%91/">git的坑</a>
+          </li>
+        
+          <li>
+            <a href="/jc-artisan.github.io/2020/07/29/Maven/">Maven </a>
+          </li>
+        
+          <li>
+            <a href="/jc-artisan.github.io/2020/07/28/SpringBoot-%E8%BF%99%E5%B0%86%E4%BC%9A%E6%98%AF%E4%B8%80%E7%AF%87%E5%8F%88%E8%87%AD%E5%8F%88%E9%95%BF%E7%9A%84%E5%8D%9A%E5%AE%A2/">SpringBoot,这将会是一篇又臭又长的技术博客</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 jc<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/jc-artisan.github.io/" class="mobile-nav-link">Home</a>
+  
+    <a href="/jc-artisan.github.io/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/jc-artisan.github.io/fancybox/jquery.fancybox.css">
+
+  
+<script src="/jc-artisan.github.io/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/jc-artisan.github.io/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

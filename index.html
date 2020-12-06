@@ -70,6 +70,88 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-数据库" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/jc-artisan.github.io/2020/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="article-date">
+  <time datetime="2020-09-13T02:13:48.000Z" itemprop="datePublished">2020-09-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/jc-artisan.github.io/2020/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>排序案例：<pre><code>1 asc 升序  desc 降序
+2 order by 子句支持单个字段，多个字段，表达式，函数，别名
+3 order by 一般放在查询语句的后面，limit除外
+案例：查询部门编号&gt;=90  按入职时间排序
+select * 
+from employees
+where  department_id &gt;=90
+order by hiredata asc ;
+案例：按年薪的高低显示员工的信息和年薪
+select * , salary*12x(1+ifnull(commisson_pct,0)) 年薪
+from  employees 
+order by salary*12x(1+ifnull(commisson_pct,0)) desc;//可以用别名 年薪
+案例：按姓名的长度显示员工的姓名和工资
+select length(last_name)  字节长度，last_name,salary
+from employees
+order by length(last_name) desc;
+案例：查询员工信息，要求按工资升序，员工编号降序
+select *
+from employees 
+order by salary asc,employe_id desc;</code></pre></li>
+<li>常见函数 ：类似Java的方法，将逻辑封装在方法中，对外暴露方法名  隐藏了实现细节，提高代码重用性 </li>
+</ul>
+<ol>
+<li>调用方法 ：select 函数名（实参列表） from 表名</li>
+<li>特点：函数名，函数功能</li>
+<li>分类：单行函数（有返回值）  concat，length，ifnull ； 分组函数（主要做统计）/统计函数/聚合函数</li>
+</ol>
+<ul>
+<li><p>字符函数：<br>length：获取参数值得字节个数<br>concat：拼接字符串<br>upper lower：大小写<br>substr substring：substr（“李莫愁爱上了陆展元”，6）输出：了陆展元 <em>索引从1开始</em>  substr（“李莫愁爱上了陆展元”，1,3）输出：李莫愁  3 是字符长度</p>
+<pre><code>案例：姓名中首字符大写，其他小写，用_拼接
+select concat(upper(substr(last_name,1,1)),&quot;_&quot;,lower(substr(last_name,2))) from employees</code></pre><p>instr ： select instr(“杨不悔爱上了殷六侠”,“殷六侠”) 返回子串第一次出现的索引，找不到返回0<br>trim： select trim（a from “aaaa张翠山AAAA“）  去掉前后的a<br>Lpad：select Lpad (“殷素素”,10,”*”)  用指定字符左填充   rpad右填充<br>replace：select replace(“张无忌爱上了周芷若”.”周芷若”,”赵敏”)</p>
+</li>
+<li><p>数学函数<br>round 四舍五入</p>
+</li>
+<li><p>日期函数<br>now() 返回当前系统时间  select now();<br>str_to_data(“1999-09-21”,”%y-%m-%d”) 按自己想要的格式返回日期字符串</p>
+</li>
+</ul>
+<p>curdata() 返回系统当期日期，不包含时间<br>其他函数 ：version（） database（）<br>流程控制函数：<br>            if函数： if else 的效果<br>            select  last_name,commission_pact is null,”没奖金，呵呵”，”有奖金，嘻嘻”） from employees<br>            case :1 java的switch case 的效果<br>            案例：查询员工工资 要求：部门号==30，实现的工资为1.1倍 部门号==40，实现的工资为1.2倍 ….<br>            select salary 原始工资 ，depart_id<br>            case depart_id<br>            when 30 then salary*1.1 ;<br>            ….<br>            else salary<br>            end</p>
+<pre><code>多重if：
+case  什么都不写
+when   条件一  then  要显示的值或者语句
+when   条件二  then  要显示的值或者语句
+......
+else 要显示的值或者语句
+end </code></pre><p> 分组函数（主要做统计）/统计函数/聚合函数：sum ，avg，max，min，count  都可以忽略null<br>     sum avg 一般用于处理数值型   max min count 可以处理任何类型<br>            案例：查询哪个部门的员工数&gt;2<br>            select count(<em>),department_id<br>            from employees<br>            group by depart_id<br>            having count(</em>)&gt;2;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jc-artisan.github.io/2020/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/" data-id="ckicgr9dy0000d4wchwsp8wzz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-分布式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/jc-artisan.github.io/2020/08/04/%E5%88%86%E5%B8%83%E5%BC%8F/" class="article-date">
@@ -92,7 +174,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="概念方面"><a href="#概念方面" class="headerlink" title="概念方面"></a>概念方面</h1><h2 id="微服务的概念"><a href="#微服务的概念" class="headerlink" title="微服务的概念"></a>微服务的概念</h2><p>就是拒绝大型应用，把服务拆分，分成一个个的服务，各个服务相互独立。就是把单独的应用程序，开发成一套服务，每个小服务在自己的进程里面运行，使用轻量级机制通信，通常是HTTP API，这些服务都围绕业务能力构建。并通过完全自动化部署机制独立部署，可以使用不同的编程语言实现和不同的数据存储技术，保持最低限度的集中式管理。</p>
+<h2 id="集群-amp-分布式-amp-节点"><a href="#集群-amp-分布式-amp-节点" class="headerlink" title="集群&amp;分布式&amp;节点"></a>集群&amp;分布式&amp;节点</h2><p><strong>集群</strong>：物理形态，一堆机器协同工作，使用几台服务器协同工作<br><strong>分布式</strong>：一种工作方式<br><strong>节点</strong>：集群中的一个服务器</p>
+<h2 id="远程调用"><a href="#远程调用" class="headerlink" title="远程调用"></a>远程调用</h2><p>分布式系统中，各个小服务之间使用HTTP+JSON方式完成远程调用。数据用JSON封装起来传递</p>
+<h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><p><strong>常见的算法</strong></p>
+<ol>
+<li>轮询：为第一个请求选择健康池的第一个后端服务器，然后按顺序往后依次查找，知道最后一个，然后循环。</li>
+<li>最小连接：优先选择连接数最少，也就是压力最小的服务器，会话时间较长一般使用这种。</li>
+<li>散列：哈希<h2 id="服务注册-发现-amp-注册中心"><a href="#服务注册-发现-amp-注册中心" class="headerlink" title="服务注册/发现&amp;注册中心"></a>服务注册/发现&amp;注册中心</h2>两个服务之间相互调用，不知道对方服务有几个正常运行，用服务注册<h2 id="配置中心"><a href="#配置中心" class="headerlink" title="配置中心"></a>配置中心</h2>每个服务都有自己的配置，为了不一更换机器就重新配置，所在服务在配置中心获取自己的配置<h2 id="服务熔断和降级"><a href="#服务熔断和降级" class="headerlink" title="服务熔断和降级"></a>服务熔断和降级</h2>为了防止一个服务的不可用造成雪崩效应，使用容错机制保护服务</li>
+</ol>
+<p><strong>服务熔断</strong>：请求某个服务超时的时候，开始保护机制，直接启用默认数据，不再访问该服务<br><strong>服务降级</strong>：当系统处于高峰期，资源紧张，可以让非核心业务降级运行。降级：某些业务不做处理或者简单处理</p>
+<h2 id="API-GAteway"><a href="#API-GAteway" class="headerlink" title="API  GAteway"></a>API  GAteway</h2><p>GAteway 提供个各种服务，相当于门卫吧</p>
+<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1>
       
     </div>
     <footer class="article-footer">
@@ -128,7 +221,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#Git 常用命令<br>        git init 初始化本地仓库，把本地文件做成git可以管理的仓库<br>        git status<br>        git add .  相当于放缓存里面<br>        git commit -m  “Message  “<br>        git remote add origin #####  添加远端地址<br>        git push -u origin master  推过去<br>        git commit  –amend –no–edit  追加修改，还是先git add .<br>        git push </p>
+        <h1 id="Git-常用命令"><a href="#Git-常用命令" class="headerlink" title="Git 常用命令"></a>Git 常用命令</h1><pre><code>git init 初始化本地仓库，把本地文件做成git可以管理的仓库 
+git status 
+git add .  相当于放缓存里面
+git commit -m  &quot;Message  &quot;
+git remote add origin #####  添加远端地址
+git push -u origin master  推过去
+git commit  --amend --no--edit  追加修改，还是先git add . 
+git push </code></pre><h1 id="Giit上搜索技巧"><a href="#Giit上搜索技巧" class="headerlink" title="Giit上搜索技巧"></a>Giit上搜索技巧</h1><p> <em>精确名字</em> ：in:name ####<br> <em>火热程度</em> ：stars:&gt;##  或者=,&lt;   forks:也行<br> <em>详情</em> ：in:readme   in:description    language:java<br> <em>更新时间</em> ：pushed: 比如 &gt;2019-03-0 </p>
 
       
     </div>
@@ -415,7 +515,7 @@ root: /jc-artisan.github.io</code></pre><h3 id="完结撒花！！！"><a href="
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/07/">July 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/07/">July 2020</a></li></ul>
     </div>
   </div>
 
@@ -426,6 +526,10 @@ root: /jc-artisan.github.io</code></pre><h3 id="完结撒花！！！"><a href="
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/jc-artisan.github.io/2020/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+          </li>
         
           <li>
             <a href="/jc-artisan.github.io/2020/08/04/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a>
@@ -441,10 +545,6 @@ root: /jc-artisan.github.io</code></pre><h3 id="完结撒花！！！"><a href="
         
           <li>
             <a href="/jc-artisan.github.io/2020/07/28/SpringBoot-%E8%BF%99%E5%B0%86%E4%BC%9A%E6%98%AF%E4%B8%80%E7%AF%87%E5%8F%88%E8%87%AD%E5%8F%88%E9%95%BF%E7%9A%84%E5%8D%9A%E5%AE%A2/">SpringBoot,这将会是一篇又臭又长的技术博客</a>
-          </li>
-        
-          <li>
-            <a href="/jc-artisan.github.io/2020/07/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
           </li>
         
       </ul>
