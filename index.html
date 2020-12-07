@@ -128,8 +128,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><em>Precedure</em> :This is a <strong>static</strong> progaram running in computer<br><em>process</em>:This is a single run of a stand-alone program about a set of data. key word:<strong>Dynamic</strong><br><em>Thread</em>:This is a actual operating unit of the process.</p>
+        <p><em>Precedure</em> :This is a <strong>static</strong> progaram running in computer<br><em>process</em>:This is a single run of a stand-alone program about a set of data. key word:<strong>Dynamic</strong><br><em>Thread</em>:This is a actual operating unit of the process.<br><em>Lambda expression</em>:This is function programming. <strong>If a interface only contains a abstract function,then that is a functional interface.</strong><br><em>Derivation of a Lambda espression</em><br>        public class testLambda (){<br>            public static void main(String args){<br>                like li=()-&gt;{<br>                     sout(“I like lambda”);<br>                }<br>                li.lambda();</p>
+<pre><code>    }
 
+}
+//Define a functional interface
+interface like{
+    void lambda();
+}
+class iLike implements like{ == Lambda espression==like li=()-&gt;{....
+    @Override
+    public void lambda(){
+        sout(&quot;I like lambda&quot;);
+    }
+}</code></pre>
       
     </div>
     <footer class="article-footer">
@@ -477,7 +489,7 @@ defaultValue：默认参数值，如果设置了该值，required=true将失效�
 <pre><code>$ hexo init &lt;folder&gt;  这是初始化文件夹的命令，这个folder是你自己给你网站文件取的名字
 $ cd &lt;folder&gt;  进你创建的文件
 $ npm install  安装npm</code></pre></li>
-<li><p>用你自己的编辑器打开你建好的网站文件，找到<strong>*_config.yml</strong>文件，修改配置</p>
+<li><p>用你自己的编辑器打开你建好的网站文件，找到<strong>_config.yml</strong>文件，修改配置</p>
 <pre><code>title: 蒋超的博客
 subtitle: &apos;蒋超的技术博客&apos;
 description: &apos;技术博客，编程，学习&apos;  这是搜索引擎能搜索到的，这些关键字可以让别人容易搜索到
