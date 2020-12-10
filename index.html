@@ -70,6 +70,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Thinking-architecture-TR" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/jc-artisan.github.io/2020/12/09/Thinking-architecture-TR/" class="article-date">
+  <time datetime="2020-12-09T01:52:11.000Z" itemprop="datePublished">2020-12-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/jc-artisan.github.io/2020/12/09/Thinking-architecture-TR/">About the translation of spring offcial website</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>-<a href="https://tanzu.vmware.com/content/ebooks/thinking-architecturally" target="_blank" rel="noopener">Thinking Architecturally</a></p>
+<h1 id="架构师思想—第一次翻译"><a href="#架构师思想—第一次翻译" class="headerlink" title="架构师思想—第一次翻译"></a>架构师思想—第一次翻译</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Rich Hickey 曾经说过编程者要知道每件事的利益，不用权衡其它(tradeoffs of nothing)。。。这个一个能让项目去打击开发者和惹恼客户的路的方法。但是作为一个架构师，你必须要考虑每个新的库，开发语言，设计模式，方法，然后根据你拿到的不完整的信息，快速做出决定。你要怎么考虑项目中不可避免的技术选择？你怎么平衡矛盾的会议日程，你怎么保持你的团队在没有使用最新的技术的时候保持激情。<br>作为一个架构师，这是你的责任去在团队的技术行程中去有效的引导他们，接下来，你要跟着一个从发现新技术到保持一个新技术在你的团队中的一个弧线。你将学会权衡的重要，你怎么分析新技术，你怎么高效的做出必要的框架选择。你还可以了解到你做的正确的功能选择能够映射到你的codebase。<br>在你继续阅读的时候，我想做一些关于标题的解释(这里我不太清楚作者是想说称号头衔还是架构这个词)。在软件行业里面，架构没有一个好的定义，询问20个开发者给架构一个定义，你会得到20个不同的回答。还有很多组织自大的说他们没有架构师，此外，“架构”这个标题可能被严密的警戒起来在某些组织里面（1），很多人做了很细微的区分，我希望没有架构师头衔的可以看看这本书，尽可能发现一些有用的东西，严格来讲，这本书涉及到了技术领导，高级开发者，初级开发者，当然还有架构师，无论真正的头衔是什么。<br>1.<strong>我是一个“高级开发者”做了很多年的架构工作，然后我最终被授予了架构师头衔</strong><br>无论你的头衔是什么，你都可能通过看书成为一个架构师。你需要机会去练习架构的过程。这是为什么每个章节都有一套Katas【注：Kata的意思是一种结构化的方式去做事情或者练习–我觉得可以理解为和力扣差不多的网站】或者练习，去帮助你掌握概念。Katas 起源于武术的训练，但是这个概念现在不止用于武术道场。在Fred Books 中有一句比较著名的话：我们怎么去成为伟大的设计师？伟大的设计师设计（How do we get great designers? Great<br>designers design, of course.）这就意味着这也是成为架构师的方式，架构是一个巨大的系统。<br>然而，一般的架构师也只是在一小撮应用程序上，没有必要的联系你怎么可能成为大师。专业运动员花费在练习的时间远远大于他们在体育竞技里面的的时间(Profes‐<br>sional athletes spend far more time practicing their sport than they do playing in games that “count.”)；专业的音乐家和演员在现场表演之前会进行无数次的预演，但是在一般的等级之外，大多数架构师在工作中学习，意味着他们会在工程项目上产生错误，这就不用疑惑有这么多项目不能体现预期的价值。<br>建筑katas的概念产生于一场研讨会，Neward, Neal Ford, Mark Richards, Matt Stine, Simon Brown, 作者和一些其他人在前几年主导了一个以让参与者有一个能够解决模拟现实世界的问题和架构问题的机会。<br>在这样的背景下，每个章节都呈现给你一个努力学习的机会，但是你应该自己去熟悉-<a href="">Architecture Katas</a>和什么是-<a href="">lead your own</a></p>
+<h1 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h1><p>首先，我要感谢我妻子Christine一直以来在我成长路途的支持。在遇到绝境的时候，我什么都做不了如果不是她陪着我。她不止一次做了很多事情，让我能去参加一些会议，教课，或者写一本书，对于我的儿子Everett ，他容忍了我有时有一些不稳定的作息时间，总是在我回家的时候，给我微笑和拥抱。即使我不在家，我总是想念我的儿子，我找不到词语来表达我对家人的感激。<br>O’Reilly Media 是一个很棒的团队，我很感激他们的耐心和引导在写这篇文章的整个过程里面。很感谢Brian Foster把我的想法连贯成一个故事；还有Alicia Young把我写的增强了可读性，还有o Nick Adams 和 Christina Edwards在整个创作过程中的指导；如果在二十年以前告诉我，我将成为O’Reilly大家庭的一部分，我肯定不会相信。感谢你们每个人欢迎我做一个演讲者，一个老师，一个作家。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jc-artisan.github.io/2020/12/09/Thinking-architecture-TR/" data-id="ckiiwbqim0000b0wc4p2yae94" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Enhlish-grammer" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/jc-artisan.github.io/2020/12/06/Enhlish-grammer/" class="article-date">
@@ -613,6 +652,10 @@ root: /jc-artisan.github.io</code></pre><h3 id="完结撒花！！！"><a href="
       <ul>
         
           <li>
+            <a href="/jc-artisan.github.io/2020/12/09/Thinking-architecture-TR/">About the translation of spring offcial website</a>
+          </li>
+        
+          <li>
             <a href="/jc-artisan.github.io/2020/12/06/Enhlish-grammer/">Enhlish grammer</a>
           </li>
         
@@ -626,10 +669,6 @@ root: /jc-artisan.github.io</code></pre><h3 id="完结撒花！！！"><a href="
         
           <li>
             <a href="/jc-artisan.github.io/2020/08/04/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a>
-          </li>
-        
-          <li>
-            <a href="/jc-artisan.github.io/2020/08/02/git%E7%9A%84%E5%9D%91/">git的坑</a>
           </li>
         
       </ul>
