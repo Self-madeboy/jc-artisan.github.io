@@ -93,8 +93,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>-<a href="https://tanzu.vmware.com/content/ebooks/thinking-architecturally" target="_blank" rel="noopener">Thinking Architecturally</a></p>
-<h1 id="架构师思想—第一次翻译"><a href="#架构师思想—第一次翻译" class="headerlink" title="架构师思想—第一次翻译"></a>架构师思想—第一次翻译</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Rich Hickey 曾经说过编程者要知道每件事的利益，不用权衡其它(tradeoffs of nothing)。。。这个一个能让项目去打击开发者和惹恼客户的路的方法。但是作为一个架构师，你必须要考虑每个新的库，开发语言，设计模式，方法，然后根据你拿到的不完整的信息，快速做出决定。你要怎么考虑项目中不可避免的技术选择？你怎么平衡矛盾的会议日程，你怎么保持你的团队在没有使用最新的技术的时候保持激情。<br>作为一个架构师，这是你的责任去在团队的技术行程中去有效的引导他们，接下来，你要跟着一个从发现新技术到保持一个新技术在你的团队中的一个弧线。你将学会权衡的重要，你怎么分析新技术，你怎么高效的做出必要的框架选择。你还可以了解到你做的正确的功能选择能够映射到你的codebase。<br>在你继续阅读的时候，我想做一些关于标题的解释(这里我不太清楚作者是想说称号头衔还是架构这个词)。在软件行业里面，架构没有一个好的定义，询问20个开发者给架构一个定义，你会得到20个不同的回答。还有很多组织自大的说他们没有架构师，此外，“架构”这个标题可能被严密的警戒起来在某些组织里面（1），很多人做了很细微的区分，我希望没有架构师头衔的可以看看这本书，尽可能发现一些有用的东西，严格来讲，这本书涉及到了技术领导，高级开发者，初级开发者，当然还有架构师，无论真正的头衔是什么。<br>1.<strong>我是一个“高级开发者”做了很多年的架构工作，然后我最终被授予了架构师头衔</strong><br>无论你的头衔是什么，你都可能通过看书成为一个架构师。你需要机会去练习架构的过程。这是为什么每个章节都有一套Katas【注：Kata的意思是一种结构化的方式去做事情或者练习–我觉得可以理解为和力扣差不多的网站】或者练习，去帮助你掌握概念。Katas 起源于武术的训练，但是这个概念现在不止用于武术道场。在Fred Books 中有一句比较著名的话：我们怎么去成为伟大的设计师？伟大的设计师设计（How do we get great designers? Great<br>designers design, of course.）这就意味着这也是成为架构师的方式，架构是一个巨大的系统。<br>然而，一般的架构师也只是在一小撮应用程序上，没有必要的联系你怎么可能成为大师。专业运动员花费在练习的时间远远大于他们在体育竞技里面的的时间(Profes‐<br>sional athletes spend far more time practicing their sport than they do playing in games that “count.”)；专业的音乐家和演员在现场表演之前会进行无数次的预演，但是在一般的等级之外，大多数架构师在工作中学习，意味着他们会在工程项目上产生错误，这就不用疑惑有这么多项目不能体现预期的价值。<br>建筑katas的概念产生于一场研讨会，Neward, Neal Ford, Mark Richards, Matt Stine, Simon Brown, 作者和一些其他人在前几年主导了一个以让参与者有一个能够解决模拟现实世界的问题和架构问题的机会。<br>在这样的背景下，每个章节都呈现给你一个努力学习的机会，但是你应该自己去熟悉-<a href="">Architecture Katas</a>和什么是-<a href="">lead your own</a></p>
-<h1 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h1><p>首先，我要感谢我妻子Christine一直以来在我成长路途的支持。在遇到绝境的时候，我什么都做不了如果不是她陪着我。她不止一次做了很多事情，让我能去参加一些会议，教课，或者写一本书，对于我的儿子Everett ，他容忍了我有时有一些不稳定的作息时间，总是在我回家的时候，给我微笑和拥抱。即使我不在家，我总是想念我的儿子，我找不到词语来表达我对家人的感激。<br>O’Reilly Media 是一个很棒的团队，我很感激他们的耐心和引导在写这篇文章的整个过程里面。很感谢Brian Foster把我的想法连贯成一个故事；还有Alicia Young把我写的增强了可读性，还有o Nick Adams 和 Christina Edwards在整个创作过程中的指导；如果在二十年以前告诉我，我将成为O’Reilly大家庭的一部分，我肯定不会相信。感谢你们每个人欢迎我做一个演讲者，一个老师，一个作家。</p>
+<h1 id="架构师思想—第一次翻译"><a href="#架构师思想—第一次翻译" class="headerlink" title="架构师思想—第一次翻译"></a>架构师思想—第一次翻译</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Rich Hickey 曾经说过编程者要知道每件事的利益，不用权衡其它(tradeoffs of nothing)。。。这个一个能让项目去打击开发者和惹恼客户的路的方法。但是作为一个架构师，你必须要考虑每个新的库，开发语言，设计模式，方法，然后根据你拿到的不完整的信息，快速做出决定。你要怎么考虑项目中不可避免的技术选择？你怎么平衡矛盾的会议日程，你怎么保持你的团队在没有使用最新的技术的时候保持激情。</p>
+<p>作为一个架构师，这是你的责任去在团队的技术行程中去有效的引导他们，接下来，你要跟着一个从发现新技术到保持一个新技术在你的团队中的一个弧线。你将学会权衡的重要，你怎么分析新技术，你怎么高效的做出必要的框架选择。你还可以了解到你做的正确的功能选择能够映射到你的codebase。<br>在你继续阅读的时候，我想做一些关于标题的解释(这里我不太清楚作者是想说称号头衔还是架构这个词)。在软件行业里面，架构没有一个好的定义，询问20个开发者给架构一个定义，你会得到20个不同的回答。还有很多组织自大的说他们没有架构师，此外，“架构”这个标题可能被严密的警戒起来在某些组织里面（1），很多人做了很细微的区分，我希望没有架构师头衔的可以看看这本书，尽可能发现一些有用的东西，严格来讲，这本书涉及到了技术领导，高级开发者，初级开发者，当然还有架构师，无论你真正的头衔是什么。</p>
+<p>1.<strong>我是一个“高级开发者”做了很多年的架构工作，然后我最终被授予了架构师头衔</strong><br>无论你的头衔是什么，你都可能通过看书成为一个架构师。你需要机会去练习架构的过程。这是为什么每个章节都有一套Katas【注：Kata的意思是一种结构化的方式去做事情或者练习–我觉得可以理解为和力扣差不多的网站】或者练习，去帮助你掌握概念。Katas 起源于武术的训练，但是这个概念现在不止用于武术道场。在Fred Books 中有一句比较著名的话：我们怎么去成为伟大的设计师？伟大的设计师设计（How do we get great designers? Great<br>designers design, of course.）这就意味着这也是成为架构师的方式，架构是一个巨大的系统。<br>然而，一般的架构师也只是在一小撮应用程序上，没有必要的联系你怎么可能成为大师。专业运动员花费在练习的时间远远大于他们在体育竞技里面的的时间(Profes‐<br>sional athletes spend far more time practicing their sport than they do playing in games that “count.”)；专业的音乐家和演员在现场表演之前会进行无数次的预演，但是在一般的等级之外，大多数架构师在工作中学习，意味着他们会在工程项目上产生错误，这就不用疑惑有这么多项目不能体现预期的价值。<br>建筑katas的概念产生于一场研讨会，Neward, Neal Ford, Mark Richards, Matt Stine, Simon Brown, 作者和一些其他人在前几年主导了一个以让参与者有一个能够解决模拟现实世界的问题和架构问题的机会。<br>在这样的背景下，每个章节都呈现给你一个努力学习的机会，但是你应该自己去熟悉-<a href="">Architecture Katas</a>和什么是-<a href="">lead your own</a></p>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>首先，我要感谢我妻子Christine一直以来在我成长路途的支持。在遇到绝境的时候，我什么都做不了如果不是她陪着我。她不止一次做了很多事情，让我能去参加一些会议，教课，或者写一本书，对于我的儿子Everett ，他容忍了我有时有一些不稳定的作息时间，总是在我回家的时候，给我微笑和拥抱。即使我不在家，我总是想念我的儿子，我找不到词语来表达我对家人的感激。<br>O’Reilly Media 是一个很棒的团队，我很感激他们的耐心和引导在写这篇文章的整个过程里面。很感谢Brian Foster把我的想法连贯成一个故事；还有Alicia Young把我写的增强了可读性，还有o Nick Adams 和 Christina Edwards在整个创作过程中的指导；如果在二十年以前告诉我，我将成为O’Reilly大家庭的一部分，我肯定不会相信。感谢你们每个人欢迎我做一个演讲者，一个老师，一个作家。<br>我今天的成就要感谢一群我有幸可以称作朋友的令人印象深刻的团队。我很幸运我站在巨人的肩膀上，我由衷的感谢那些在软件的许多方面帮助过的我的朋友(I want to extend my heartfelt appreciation to those that have shaped my thinking on everything from software to fine dining to slinging slides–我不知道作者这句话的准确意思)<br>对于To Martin Fowler, Brian Goetz, Neal Ford, Matthew McCullough, Stuart Halloway, Justin Gehtland, Ken Sipe, Scott Davis, Mark<br>Richards, Tim Berglund, Craig Walls, Venkat Subramaniam, Matt Stine, Glen<br>Vanderburg, Dave Hussman, Ken Kousen, Mike Nygard, Kirk Knoernschild,<br>Christopher Judd, Daniel Hinojosa, Raju Gandhi, Jeremy Deane, Peter Bell,<br>Howard Lewis Ship, Pratik Patel, Brian Sletten, Michael Carducci, Danny Brian,<br>Ted Neward, Joe Athman, and Aaron Bedra，我仍然不知道我做了什么可以得到这群朋友的保证。最后到我了，如果你读到这里，我还想去感谢那些过去我有幸一起工作过的很有才能的架构师。从Gary Gillard，我参与的第一个web架构项目到 Jeff Escott 指导了我很多关于工作上的细节，再到我的好朋友Aasta Frascati-Robinson给了我灵感和鼓励。Mark Stofferahn在quality attributes和the cloud对我的想法有很大影响。Karim HadjSalem and Matt Gorman教会我有些事情只能一笑置之。对于 Scott Leigner, Bob Baty, Cam Sonido, Steve Shaw, Rick Meemken, Dave Dahl, Mike Gitberg, Mike Samra, James Brown, Rob Harwood, Craig Gronlund, Hoa Ton-That, Pee T Lim, Ken Lamb, Don Smith, Eamonn Buss, Chad Hinkel, Chris Lyons, Raina Johnson, Joe Drechsel, Bobby Kaminsky, Ted Setterlund, Mark Schreifels, Bob Casola, Jim Payant, and Jill Spear，感谢你们所有人的建议，你们的才智和友谊。对于我在列表上漏掉的诸位，我真心到道歉，这是我单方面的过错，平不是故意怠慢。</p>
+<h2 id="章节一"><a href="#章节一" class="headerlink" title="章节一"></a>章节一</h2><h2 id="技术的变化"><a href="#技术的变化" class="headerlink" title="技术的变化"></a>技术的变化</h2><p>如果你在软件世界呆过一段时间，你肯定会知道技术的变化很快，这是不可避免的。在我的早期职业生涯，我因为我认为我错过了技术的浪潮感到沮丧，那个时候我不喜欢技术像巴士一样，每十五分钟来一趟。<br>做为架构师，我们要记住我们不能停止改变，但是我们能掌管它。在接下来的章节我们会介绍过去可以教会你的，提示你不能预测未来的技术，为什么你不应该快速的丢掉传统技能。</p>
+<h2 id="在此前我们见过这个吗？"><a href="#在此前我们见过这个吗？" class="headerlink" title="在此前我们见过这个吗？"></a>在此前我们见过这个吗？</h2><p><em>这些不能记住过去的最终都会重蹈覆辙</em><br>对于大多数开发者，从他们第一次学习开发语言的时候，最初的语言就成了我们的引路灯，我们通常会会根据我们最初的经历对比其他语言，然而我们最先的语言已经打下了深厚的基础，这个可能会让我们比较局限。许多开发者不怎么高兴有新特性添加到他们最爱的开发语言。当java 8 添加了lambda表达式，一些开发者不明白为什么他们的语言需要这些新特性。我相信有一部分人更钟意于过去的版本。</p>
 
       
     </div>
@@ -131,7 +135,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p><em>本来想记录自己学习英语语法的，结果用来记录我翻译的时候遇到的短语和词汇</em></p>
+<h1 id="这是thinking-architecture的翻译中遇到的单词，短语等。"><a href="#这是thinking-architecture的翻译中遇到的单词，短语等。" class="headerlink" title="这是thinking-architecture的翻译中遇到的单词，短语等。"></a>这是thinking-architecture的翻译中遇到的单词，短语等。</h1><ul>
+<li>tradeoff： 权衡trade-off</li>
+<li>title :这个还有头衔，称呼的意思</li>
+<li>fine-grained：纹理细密的—细微的</li>
+<li>regardless of：无论，尽管</li>
+<li>as much as :尽可能多的</li>
+<li>rehearsing :预演</li>
+<li>perfunctory:敷衍，马虎</li>
+<li>corner:有绝境的意思</li>
+<li>erratic:变化无常，不稳定的</li>
+<li>molding:建筑装饰线条</li>
+<li>coherent:连贯的</li>
+<li>narrative:叙事，故事</li>
+<li>shepherding：指导，牧羊人，带领</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
@@ -262,6 +282,35 @@ when   条件二  then  要显示的值或者语句
 ......
 else 要显示的值或者语句
 end </code></pre><p> 分组函数（主要做统计）/统计函数/聚合函数：sum ，avg，max，min，count  都可以忽略null<br>     sum avg 一般用于处理数值型   max min count 可以处理任何类型<br>            案例：查询哪个部门的员工数&gt;2<br>            select count(<em>),department_id<br>            from employees<br>            group by depart_id<br>            having count(</em>)&gt;2;</p>
+<ul>
+<li>分组函数总结  语法：select 分组函数，列（要求出现在group by 的后面）<pre><code>from 表
+where 筛选条件
+group by 分组的列表
+order by 子句</code></pre>注意：<pre><code>查询列表必须特殊，要求是分组函数和group by 后出现的字段</code></pre>特点： 分组查询的筛选分两类<pre><code>分组前筛选   原始表         group by 子句前（where）
+分组后筛选   分组后结果集   group by 子句后（having）</code></pre></li>
+</ul>
+<ol>
+<li>分组函数做条件肯定放having子句中</li>
+<li>能用分组前筛选，优先考虑分组前</li>
+<li>多个字段分组 将多个字段放group后面，逗号隔开就行</li>
+</ol>
+<ul>
+<li>连接查询，当有多个涉及的时候，就用连接查询<br>笛卡尔乘积：表一 m行 表二 n行 结果集=m*n行 完全连接<br>发生原因：没有有效连接条件<pre><code>案例：select name，boyname
+from boys，beauty
+where beauty.boyfriend_id=boys.id;</code></pre></li>
+</ul>
+<ol>
+<li>连接查询的分类：1按功能分类（内连接（等值连接，非等值连接，自连接），外连接（左外连接，右外连接，全外连接），交叉连接）</li>
+</ol>
+<ul>
+<li>等值连接 ：1 多表等值连接的结果为多表的交集部分<br>2 N表连接，需要n-1个连接条件<br>3 多表的顺序没有要求，一般需要其别名</li>
+<li>非等值连接<pre><code>案例：查询员工的工资和工资级别
+select salary,grade_level
+from employees e,job_grades g
+where salary between g.&quot;lowest_sal&quot; and g.&quot;highest_sal&quot;</code></pre></li>
+<li>自连接：相当于等值连接，自己连接自己</li>
+<li>子查询  分类：按子查询出现的位置：select（仅标量）,from （表）,where或having（标量或列行），exists 相关子查询  （表）<br>按结果集的行列数不同： 标量子查询（结果集只有一行一列）<br>列子查询（结果集只有一列多行）<br>行子查询（结果集有一行多列）<br>表子查询（结果集为多行多列）</li>
+</ul>
 
       
     </div>
