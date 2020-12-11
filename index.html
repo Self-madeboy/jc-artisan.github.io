@@ -93,12 +93,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>-<a href="https://tanzu.vmware.com/content/ebooks/thinking-architecturally" target="_blank" rel="noopener">Thinking Architecturally</a></p>
-<h1 id="架构师思想—第一次翻译"><a href="#架构师思想—第一次翻译" class="headerlink" title="架构师思想—第一次翻译"></a>架构师思想—第一次翻译</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Rich Hickey 曾经说过编程者要知道每件事的利益，不用权衡其它(tradeoffs of nothing)。。。这个一个能让项目去打击开发者和惹恼客户的路的方法。但是作为一个架构师，你必须要考虑每个新的库，开发语言，设计模式，方法，然后根据你拿到的不完整的信息，快速做出决定。你要怎么考虑项目中不可避免的技术选择？你怎么平衡矛盾的会议日程，你怎么保持你的团队在没有使用最新的技术的时候保持激情。</p>
+<h1 id="架构师思想—第一次翻译"><a href="#架构师思想—第一次翻译" class="headerlink" title="架构师思想—第一次翻译"></a>架构师思想—第一次翻译</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Rich Hickey 曾经说过编程者要知道每件事的利益，不用权衡其它(tradeoffs of nothing)。。。这个一个能让项目去打击开发者和惹恼客户的路的方法。但是作为一个架构师，你必须要考虑每个新的库，开发语言，设计模式，方法，然后根据你拿到的不完整的信息，快速做出决定。你要怎么考虑项目中不可避免的技术选择？你怎么权衡开发日程，你怎么保持你的团队在没有使用最新的技术的时候保持激情。</p>
 <p>作为一个架构师，这是你的责任去在团队的技术行程中去有效的引导他们，接下来，你要跟着一个从发现新技术到保持一个新技术在你的团队中的一个弧线。你将学会权衡的重要，你怎么分析新技术，你怎么高效的做出必要的框架选择。你还可以了解到你做的正确的功能选择能够映射到你的codebase。<br>在你继续阅读的时候，我想做一些关于标题的解释(这里我不太清楚作者是想说称号头衔还是架构这个词)。在软件行业里面，架构没有一个好的定义，询问20个开发者给架构一个定义，你会得到20个不同的回答。还有很多组织自大的说他们没有架构师，此外，“架构”这个标题可能被严密的警戒起来在某些组织里面（1），很多人做了很细微的区分，我希望没有架构师头衔的可以看看这本书，尽可能发现一些有用的东西，严格来讲，这本书涉及到了技术领导，高级开发者，初级开发者，当然还有架构师，无论你真正的头衔是什么。</p>
-<p>1.<strong>我是一个“高级开发者”做了很多年的架构工作，然后我最终被授予了架构师头衔</strong><br>无论你的头衔是什么，你都可能通过看书成为一个架构师。你需要机会去练习架构的过程。这是为什么每个章节都有一套Katas【注：Kata的意思是一种结构化的方式去做事情或者练习–我觉得可以理解为和力扣差不多的网站】或者练习，去帮助你掌握概念。Katas 起源于武术的训练，但是这个概念现在不止用于武术道场。在Fred Books 中有一句比较著名的话：我们怎么去成为伟大的设计师？伟大的设计师设计（How do we get great designers? Great<br>designers design, of course.）这就意味着这也是成为架构师的方式，架构是一个巨大的系统。<br>然而，一般的架构师也只是在一小撮应用程序上，没有必要的联系你怎么可能成为大师。专业运动员花费在练习的时间远远大于他们在体育竞技里面的的时间(Profes‐<br>sional athletes spend far more time practicing their sport than they do playing in games that “count.”)；专业的音乐家和演员在现场表演之前会进行无数次的预演，但是在一般的等级之外，大多数架构师在工作中学习，意味着他们会在工程项目上产生错误，这就不用疑惑有这么多项目不能体现预期的价值。<br>建筑katas的概念产生于一场研讨会，Neward, Neal Ford, Mark Richards, Matt Stine, Simon Brown, 作者和一些其他人在前几年主导了一个以让参与者有一个能够解决模拟现实世界的问题和架构问题的机会。<br>在这样的背景下，每个章节都呈现给你一个努力学习的机会，但是你应该自己去熟悉-<a href="http://nealford.com/katas/index.html" target="_blank" rel="noopener">Architecture Katas</a>和什么是-<a href="https://archkatas.herokuapp.com/lead.html" target="_blank" rel="noopener">lead your own</a></p>
-<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>首先，我要感谢我妻子Christine一直以来在我成长路途的支持。在遇到绝境的时候，我什么都做不了如果不是她陪着我。她不止一次做了很多事情，让我能去参加一些会议，教课，或者写一本书，对于我的儿子Everett ，他容忍了我有时有一些不稳定的作息时间，总是在我回家的时候，给我微笑和拥抱。即使我不在家，我总是想念我的儿子，我找不到词语来表达我对家人的感激。<br>O’Reilly Media 是一个很棒的团队，我很感激他们的耐心和引导在写这篇文章的整个过程里面。很感谢Brian Foster把我的想法连贯成一个故事；还有Alicia Young把我写的增强了可读性，还有o Nick Adams 和 Christina Edwards在整个创作过程中的指导；如果在二十年以前告诉我，我将成为O’Reilly大家庭的一部分，我肯定不会相信。感谢你们每个人欢迎我做一个演讲者，一个老师，一个作家。<br>我今天的成就要感谢一群我有幸可以称作朋友的令人印象深刻的团队。我很幸运我站在巨人的肩膀上，我由衷的感谢那些在软件的许多方面帮助过的我的朋友(I want to extend my heartfelt appreciation to those that have shaped my thinking on everything from software to fine dining to slinging slides–我不知道作者这句话的准确意思)<br>对于To Martin Fowler, Brian Goetz, Neal Ford, Matthew McCullough, Stuart Halloway, Justin Gehtland, Ken Sipe, Scott Davis, Mark<br>Richards, Tim Berglund, Craig Walls, Venkat Subramaniam, Matt Stine, Glen<br>Vanderburg, Dave Hussman, Ken Kousen, Mike Nygard, Kirk Knoernschild,<br>Christopher Judd, Daniel Hinojosa, Raju Gandhi, Jeremy Deane, Peter Bell,<br>Howard Lewis Ship, Pratik Patel, Brian Sletten, Michael Carducci, Danny Brian,<br>Ted Neward, Joe Athman, and Aaron Bedra，我仍然不知道我做了什么可以得到这群朋友的保证。最后到我了，如果你读到这里，我还想去感谢那些过去我有幸一起工作过的很有才能的架构师。从Gary Gillard，我参与的第一个web架构项目到 Jeff Escott 指导了我很多关于工作上的细节，再到我的好朋友Aasta Frascati-Robinson给了我灵感和鼓励。Mark Stofferahn在quality attributes和the cloud对我的想法有很大影响。Karim HadjSalem and Matt Gorman教会我有些事情只能一笑置之。对于 Scott Leigner, Bob Baty, Cam Sonido, Steve Shaw, Rick Meemken, Dave Dahl, Mike Gitberg, Mike Samra, James Brown, Rob Harwood, Craig Gronlund, Hoa Ton-That, Pee T Lim, Ken Lamb, Don Smith, Eamonn Buss, Chad Hinkel, Chris Lyons, Raina Johnson, Joe Drechsel, Bobby Kaminsky, Ted Setterlund, Mark Schreifels, Bob Casola, Jim Payant, and Jill Spear，感谢你们所有人的建议，你们的才智和友谊。对于我在列表上漏掉的诸位，我真心到道歉，这是我单方面的过错，平不是故意怠慢。</p>
+<p>1.<strong>我是一个“高级开发者”做了很多年的架构工作，然后我最终被授予了架构师头衔</strong><br>无论你的头衔是什么，你都可能通过看书成为一个架构师。你需要机会去练习架构的过程。这是为什么每个章节都有一套Katas【注：Kata的意思是一种结构化的方式去做事情或者练习–我觉得可以理解为和力扣差不多的网站】或者练习，去帮助你掌握概念。Katas 起源于武术的训练，但是这个概念现在不止用于武术道场。在Fred Books 中有一句比较著名的话：我们怎么去成为伟大的设计师？伟大的设计师设计（How do we get great designers? Great designers design, of course.）这就意味着这也是成为架构师的方式，架构是一个巨大的系统。然而，一般的架构师也只是在一小撮应用程序上，没有必要的联系你怎么可能成为大师。专业运动员花费在练习的时间远远大于他们在体育竞技里面的的时间(Professional athletes spend far more time practicing their sport than they do playing in games that “count.”)；专业的音乐家和演员在现场表演之前会进行无数次的预演，但是在一般的等级之外，大多数架构师在工作中学习，意味着他们会在工程项目上产生错误，这就不用疑惑有这么多项目不能体现预期的价值。</p>
+<p>建筑katas的概念产生于一场研讨会，Neward, Neal Ford, Mark Richards, Matt Stine, Simon Brown, 作者和一些其他人在前几年主导了一个以让参与者有一个能够解决模拟现实世界的问题和架构问题的机会。<br>在这样的背景下，每个章节都呈现给你一个努力学习的机会，但是你应该自己去熟悉-<a href="http://nealford.com/katas/index.html" target="_blank" rel="noopener">Architecture Katas</a>和什么是-<a href="https://archkatas.herokuapp.com/lead.html" target="_blank" rel="noopener">lead your own</a></p>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>首先，我要感谢我妻子Christine一直以来在我成长路途的支持。在遇到绝境的时候，我什么都做不了如果不是她陪着我。她不止一次做了很多事情，让我能去参加一些会议，教课，或者写一本书，对于我的儿子Everett ，他容忍了我有时有一些不稳定的作息时间，总是在我回家的时候，给我微笑和拥抱。即使我不在家，我总是想念我的儿子，我找不到词语来表达我对家人的感激。</p>
+<p>O’Reilly Media 是一个很棒的团队，我很感激他们的耐心和引导在写这篇文章的整个过程里面。很感谢Brian Foster把我的想法连贯成一个故事；还有Alicia Young把我写的增强了可读性，还有o Nick Adams 和 Christina Edwards在整个创作过程中的指导；如果在二十年以前告诉我，我将成为O’Reilly大家庭的一部分，我肯定不会相信。感谢你们每个人欢迎我做一个演讲者，一个老师，一个作家。</p>
+<p>我今天的成就要感谢一群我有幸可以称作朋友的令人印象深刻的团队。我很幸运我站在巨人的肩膀上，我由衷的感谢那些在软件的许多方面帮助过的我的朋友(I want to extend my heartfelt appreciation to those that have shaped my thinking on everything from software to fine dining to slinging slides–我不知道作者这句话的准确意思)对于To Martin Fowler, Brian Goetz, Neal Ford, Matthew McCullough, Stuart Halloway, Justin Gehtland, Ken Sipe, Scott Davis, MarkRichards, Tim Berglund, Craig Walls, Venkat Subramaniam, Matt Stine, Glen Vanderburg, Dave Hussman, Ken Kousen, Mike Nygard, Kirk Knoernschild, Christopher Judd, Daniel Hinojosa, Raju Gandhi, Jeremy Deane, Peter Bell, Howard Lewis Ship, Pratik Patel, Brian Sletten, Michael Carducci, Danny Brian, Ted Neward, Joe Athman, and Aaron Bedra，我仍然不知道我做了什么可以得到这群朋友的保证。最后到我了，如果你读到这里，我还想去感谢那些过去我有幸一起工作过的很有才能的架构师。从Gary Gillard，我参与的第一个web架构项目到 Jeff Escott 指导了我很多关于工作上的细节，再到我的好朋友Aasta Frascati-Robinson给了我灵感和鼓励。Mark Stofferahn在quality attributes和the cloud对我的想法有很大影响。Karim HadjSalem and Matt Gorman教会我有些事情只能一笑置之。对于 Scott Leigner, Bob Baty, Cam Sonido, Steve Shaw, Rick Meemken, Dave Dahl, Mike Gitberg, Mike Samra, James Brown, Rob Harwood, Craig Gronlund, Hoa Ton-That, Pee T Lim, Ken Lamb, Don Smith, Eamonn Buss, Chad Hinkel, Chris Lyons, Raina Johnson, Joe Drechsel, Bobby Kaminsky, Ted Setterlund, Mark Schreifels, Bob Casola, Jim Payant, and Jill Spear，感谢你们所有人的建议，你们的才智和友谊。对于我在列表上漏掉的诸位，我真心到道歉，这是我单方面的过错，平不是故意怠慢。</p>
 <h2 id="章节一"><a href="#章节一" class="headerlink" title="章节一"></a>章节一</h2><h2 id="技术的变化"><a href="#技术的变化" class="headerlink" title="技术的变化"></a>技术的变化</h2><p>如果你在软件世界呆过一段时间，你肯定会知道技术的变化很快，这是不可避免的。在我的早期职业生涯，我因为我认为我错过了技术的浪潮感到沮丧，那个时候我不喜欢技术像巴士一样，每十五分钟来一趟。<br>做为架构师，我们要记住我们不能停止改变，但是我们能掌管它。在接下来的章节我们会介绍过去可以教会你的，提示你不能预测未来的技术，为什么你不应该快速的丢掉传统技能。</p>
 <h2 id="在此前我们见过这个吗？"><a href="#在此前我们见过这个吗？" class="headerlink" title="在此前我们见过这个吗？"></a>在此前我们见过这个吗？</h2><p><em>这些不能记住过去的最终都会重蹈覆辙</em><br>对于大多数开发者，从他们第一次学习开发语言的时候，最初的语言就成了我们的引路灯，我们通常会会根据我们最初的经历对比其他语言，然而我们最先的语言已经打下了深厚的基础，这个可能会让我们比较局限。许多开发者不怎么高兴有新特性添加到他们最爱的开发语言。当java 8 添加了lambda表达式，一些开发者不明白为什么他们的语言需要这些新特性。我相信有一部分人更钟意于过去的版本。</p>
+<p>有经验的你可能会认识到，技术经常自我更新，想想分布式，现在很流行的微服务和无服务技术(-<a href="https://en.wikipedia.org/wiki/Serverless_computing" target="_blank" rel="noopener">serverless</a>)现在我们稍微往后退一点，看看从定制服务器虚拟机再到容器的演变。如果你斜视一点，你就能感觉到服务架构的回音。事实上，某些人可能会说微服务就是个-<a href="https://www.bmc.com/blogs/service-oriented-architecture-overview/" target="_blank" rel="noopener">SOA</a>(service-oriented archi‐<br>tectures)。还记得那些谈论SOA的博客，文章，书籍和会议吗？</p>
+<p>再往后退一点，SOA是不是很像企业级的java Beans? 在不久以前，他们还只是IT技术，在一些会议上有些许的痕迹。在那个时候我们行业也继续在巨人的肩膀上继续发展，继续往后退你可能开始看到-<a href="https://zh.wikipedia.org/wiki/CORBA" target="_blank" rel="noopener">CORBA</a>的轮廓。</p>
+<p>当然这不是说技术没有任何提高只是单纯的重复，云计算消除了很多制约，让我们可以共享基础设施和带来的其他便利。最重要的是去认识到今天的技术是如何被过去的技术塑造的。过去用历史技术背景塑造未来，所以你可以根据给你的历史背景做一个对未来技术发展的大致推测。</p>
 
       
     </div>
@@ -138,18 +144,32 @@
         <p><em>本来想记录自己学习英语语法的，结果用来记录我翻译的时候遇到的短语和词汇</em></p>
 <h1 id="这是thinking-architecture的翻译中遇到的单词，短语等。"><a href="#这是thinking-architecture的翻译中遇到的单词，短语等。" class="headerlink" title="这是thinking-architecture的翻译中遇到的单词，短语等。"></a>这是thinking-architecture的翻译中遇到的单词，短语等。</h1><ul>
 <li>tradeoff： 权衡trade-off</li>
-<li>title :这个还有头衔，称呼的意思</li>
+<li>title : 这个还有头衔，称呼的意思</li>
 <li>fine-grained：纹理细密的—细微的</li>
 <li>regardless of：无论，尽管</li>
-<li>as much as :尽可能多的</li>
-<li>rehearsing :预演</li>
-<li>perfunctory:敷衍，马虎</li>
-<li>corner:有绝境的意思</li>
-<li>erratic:变化无常，不稳定的</li>
-<li>molding:建筑装饰线条</li>
-<li>coherent:连贯的</li>
-<li>narrative:叙事，故事</li>
+<li>as much as : 尽可能多的</li>
+<li>rehearsing : 预演</li>
+<li>perfunctory: 敷衍，马虎</li>
+<li>corner: 有绝境的意思</li>
+<li>erratic: 变化无常，不稳定的</li>
+<li>molding: 建筑装饰线条</li>
+<li>coherent: 连贯的</li>
+<li>narrative: 叙事，故事</li>
 <li>shepherding：指导，牧羊人，带领</li>
+<li>privilege: 特权，优待，授予。。。权力（正式），特免</li>
+<li>heartfelt: 衷心的，真诚的</li>
+<li>warrant: 逮捕证，提货凭单，依据，v 确保 </li>
+<li>subtler: 精细的</li>
+<li>slight：n 怠慢，adj，少量 vt 怠慢</li>
+<li>humblest：最卑微的</li>
+<li>despondent：沮丧的</li>
+<li>In the rest of：剩下的</li>
+<li>jettison：扔，丢弃</li>
+<li>legacy：传统（计算机），遗留</li>
+<li>inaugural：adj 开始的</li>
+<li>bespoke：定制</li>
+<li>an awful lot：相当多</li>
+<li>infrastructure: 基础设施</li>
 </ul>
 
       
