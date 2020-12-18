@@ -70,6 +70,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-SpringBoot-这将会是一篇又臭又长的博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/jc-artisan.github.io/2020/07/28/SpringBoot-%E8%BF%99%E5%B0%86%E4%BC%9A%E6%98%AF%E4%B8%80%E7%AF%87%E5%8F%88%E8%87%AD%E5%8F%88%E9%95%BF%E7%9A%84%E5%8D%9A%E5%AE%A2/" class="article-date">
+  <time datetime="2020-07-28T02:07:09.000Z" itemprop="datePublished">2020-07-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/jc-artisan.github.io/2020/07/28/SpringBoot-%E8%BF%99%E5%B0%86%E4%BC%9A%E6%98%AF%E4%B8%80%E7%AF%87%E5%8F%88%E8%87%AD%E5%8F%88%E9%95%BF%E7%9A%84%E5%8D%9A%E5%AE%A2/">SpringBoot,这将会是一篇又臭又长的技术博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><ul>
+<li>首先我们打开idea，用spring initial进入，maven自动导入，真的太<strong>慢</strong>了！！！</li>
+<li>然后就去spring的官网里找guide，里面有一个<a href="https://spring.io/guides/gs/serving-web-content/" target="_blank" rel="noopener">Thymeleaf</a>,用这个小叶子搭建一个小小的页面<br>，在这个小叶子的Guide里面，提到要创建一个控制类，当然你还要导入他的pom，我选的maven<pre><code>@controller，这是springMvc里面的控制类，还有M和V我就不看了，我只记录遇到的吧！
+@controller标记在一个类上之后，这个类就是springMvc的控制类，然后搭配spring的话就要去配置，但是我用的是spring boot，不用配置，这个真的很方便，我标记这个类之后，只是定义了他。
+@RequestMapping这玩意儿才是处理请求的，但是这个已经被代替了，过时了</code></pre></li>
+<li><em>@GetMapping*</em>：处理get请求</li>
+<li><em>@PostMapping*</em>：处理post请求</li>
+<li><em>@PutMapping*</em>：处理put请求</li>
+<li><em>@DeleteMapping*</em>：处理delete请求<pre><code>@RequestParam：将请求参数绑定到你控制器的方法参数上（是springmvc中接收普通参数的注解）
+语法：@RequestParam(value=”参数名”,required=”true/false”,defaultValue=””)
+value：参数名
+required：是否包含该参数，默认为true，表示该请求路径中必须包含该参数，如果不包含就报错。
+defaultValue：默认参数值，如果设置了该值，required=true将失效，自动为false,如果没有传该参数，就使用默认值</code></pre></li>
+<li><em>model.addattribute()*</em>：往前台传数据，可以传对象，可以传List，通过el表达式 ${}可以获取到 </li>
+<li><em>更改端口号*</em>：server.port=####</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jc-artisan.github.io/2020/07/28/SpringBoot-%E8%BF%99%E5%B0%86%E4%BC%9A%E6%98%AF%E4%B8%80%E7%AF%87%E5%8F%88%E8%87%AD%E5%8F%88%E9%95%BF%E7%9A%84%E5%8D%9A%E5%AE%A2/" data-id="ckd7cw7l30001fgwcgs807fds" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-我的第一篇博客" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/jc-artisan.github.io/2020/07/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="article-date">
@@ -248,6 +300,10 @@ root: /jc-artisan.github.io</code></pre><h3 id="完结撒花！！！"><a href="
       <ul>
         
           <li>
+            <a href="/jc-artisan.github.io/2020/12/18/%E6%95%8F%E6%8D%B7-%E4%B8%80%E4%B8%AA%E5%BC%80%E5%8F%91%E4%BC%9F%E5%A4%A7%E8%BD%AF%E4%BB%B6%E7%9A%84%E6%96%B9%E5%BC%8F-%E8%AF%91%E6%96%87/">敏捷-一个开发伟大软件的方式-译文</a>
+          </li>
+        
+          <li>
             <a href="/jc-artisan.github.io/2020/12/18/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BE%AE%E6%9C%8D%E5%8A%A1-%E8%AF%91%E6%96%87/">什么是微服务-译文</a>
           </li>
         
@@ -261,10 +317,6 @@ root: /jc-artisan.github.io</code></pre><h3 id="完结撒花！！！"><a href="
         
           <li>
             <a href="/jc-artisan.github.io/2020/12/06/Enhlish-grammer/">Enhlish grammer</a>
-          </li>
-        
-          <li>
-            <a href="/jc-artisan.github.io/2020/12/06/Thread-Coding/">Thread Coding</a>
           </li>
         
       </ul>
