@@ -165,6 +165,47 @@
 <h2 id="2021-01-13"><a href="#2021-01-13" class="headerlink" title="2021-01-13"></a>2021-01-13</h2><p>插入和保存这种一般返回1，判断结果的时候不是1就有问题<br>从数据库取数据的时候要判空，不然可能会出现空指针异常<br>代码格式要让人容易读懂<br>数据库查出来的单条数据要判空，不然很大可能出现空指针异常<br>在类上面用@builder后不能再new该对象，只能build</p>
 <h2 id="2021-01-21"><a href="#2021-01-21" class="headerlink" title="2021-01-21"></a>2021-01-21</h2><p>可以异常抛出，处理异常–比如我写了个垃圾算法，没有计算余数，有余数报错，我就可以try我的垃圾算法，然后抛出报的那个错</p>
 <h2 id="2021-02-22"><a href="#2021-02-22" class="headerlink" title="2021-02-22"></a>2021-02-22</h2><p>微服务之间有延迟，等于-1 好像是延迟大，报错<br>git 合并某个提交commit到指定的分支上使用git log 查看提交的信息, 记住commit id.<br>git checkout 要修改的分支<br>git cherry-pick 某个commit id   // 把某个commit id的提交合并到当前分支.</p>
+<h2 id="2021-02-23"><a href="#2021-02-23" class="headerlink" title="2021-02-23"></a>2021-02-23</h2><p>为什么要划分VLAN, 因为都在一个网络会有网络风暴<br>mybatis通过什么方式防止sql注入?</p>
+<ol>
+<li>#将传入的数据都当成一个字符串，会对自动传入的数据加一个双引号。</li>
+</ol>
+<p>如：where username=#{username}，如果传入的值是111, 那么解析成sql时的值为where username=”111”, 如果传入的值是id，则解析成的sql为where username=”id”.　</p>
+<ol start="2">
+<li>$将传入的数据直接显示生成在sql中。</li>
+</ol>
+<p>如：where username=${username}，如果传入的值是111, 那么解析成sql时的值为where username=111；<br>如果传入的值是; drop table user; ，则解析成的sql为：select id, username, password, role from user where username=; drop table user; </p>
+<ol start="3">
+<li>#方式能够很大程度防止sql注入，$方式无法防止Sql注入。</li>
+<li>MyBatis的SQL是一个具有“输入+输出”的功能,MyBatis启用了预编译功能，在SQL执行前，会先将SQL发送给数据库进行编译；执行时，直接使用编译好的SQL，替换占位符“?”就可以了。因为SQL注入只能对编译过程起作用，所以这样的方式就很好地避免了SQL注入的问题。</li>
+</ol>
+<p>DAO层接口定义多个入参（Mybatis）?</p>
+<ul>
+<li>将多个参数定义成一个类</li>
+<li>将入参封装到map, 使用map入参, 但是这样容易出错</li>
+<li>使用@Param定义入参。在接口入参处，用@Param定义好入参的变量名，单个入参可以不定义，多个入参就必须增加定义。</li>
+</ul>
+<ol start="5">
+<li><p>tcp和http的区别</p>
+<p>tcp长连接, 适用于会话  http短连接, 无状态</p>
+</li>
+<li><p>二分法可以作用在链表吗  </p>
+<p>先排序, 在二分</p>
+</li>
+<li><p>数组扩容,类装载机制</p>
+<p>数组扩容就是把要加进去的和已经有的复制到新建立的数组里面<br>类装载: 加载, 连接(验证-准备-解析), 初始化, 使用, 卸载</p>
+</li>
+</ol>
+<h1 id="2021-03-10"><a href="#2021-03-10" class="headerlink" title="2021-03-10"></a>2021-03-10</h1><p> <br>配置跨域的时候 config.addAllowedOrigin(“<a href="http://localhost:8086&quot;">http://localhost:8086&quot;</a>); 里面为了安全起见不要用*</p>
+<h1 id="2021-03-13"><a href="#2021-03-13" class="headerlink" title="2021-03-13"></a>2021-03-13</h1><p>给js的变量赋数组的时候一定要看有没有数组进来了, 如果不是数组调用length属性的时候会报错</p>
+<p>mybatis原理<br>第一步获取sqlsessionfactory对象<br>首先  有一个配置文件  string resource=”配置文件”<br>然后 把配置文件转换成流 Inputstream inputstream resource.getresourceasstream(resource);<br>最后拿到(sqlsessionfactory) sqlsessionfactory sqlsessionfactory new sqlsessionfactory.builder().biuld(inputstream)<br>第二步 拿到sqlsession<br>sqlsession sqlsession=sqlsessionfactory.opensession()<br>sqlsession就可以用来增删改查<br>maven 约定大于配置, 如果把配置文件写在java包而不是resource下面, 就要去设置maven的配置文件==开启过滤<br><em>mapperRegister是什么</em><br>核心文件中注册mappers<br><em>mybatis会遇到的问题</em></p>
+<ol>
+<li>配置文件没有注册</li>
+<li>绑定接口错误</li>
+<li>方法名不对</li>
+<li>返回类型不对</li>
+<li>maven导出资源问题(配置文件没有放在resource要改设置)</li>
+</ol>
+<h1 id="2021-03-14"><a href="#2021-03-14" class="headerlink" title="2021-03-14"></a>2021-03-14</h1><p>@PathVariable和@RequestParam的区别我觉得就是RequestParam没有在url隐藏参数</p>
 
       
     </div>
@@ -517,8 +558,8 @@
 <p>令人兴奋的是去创造一座新桥，而不是在已经有的基础上兜兜转转。许多技术人才愿意去做开拓者，宁愿离开舒适区。没有什么比开拓新事物更有趣的事情了。</p>
 <p>“我们的应用有四种UI技术。。。”–匿名技术专业</p>
 <p>我打赌你会很欣赏这句话，可能一些人还会产生共鸣。我学生是怎么发现他在这种环境的？诚然，没有人有足够的力量对能够去对技术创新说不，我当然赞成团队对尝试新事物，但我们不能只是简单地追逐时尚。我们要明白新的技巧，技术，方法，框架，语言能够给我们独特的环境带来什么。</p>
-<h2 id="邓宁-克鲁格效应"><a href="#邓宁-克鲁格效应" class="headerlink" title="邓宁-克鲁格效应"></a>邓宁-克鲁格效应</h2><p>邓宁-克鲁格效应 是一种著名的认知理论。本质上，这种理论是指能力比较好的实践者会低估自己的能力，然而哪些经验相对较少的人会高估自己。</p>
-<p>一些对技能不准确的评估和对实践能力的无知有关系。</p>
+<h2 id="邓宁-克鲁格效应"><a href="#邓宁-克鲁格效应" class="headerlink" title="邓宁-克鲁格效应"></a>邓宁-克鲁格效应</h2><p>邓宁-克鲁格效应 是一种著名的认知理论。大体上，这种理论是指能力比较好的人会低估自己的能力，然而那些经验相对较少的人会高估自己。</p>
+<p>这种不准确的认知和在技能上的无知有关系， Donald Rumsfeld说过：“有一种知道：有些事情我们知道我们知道；有一种不知道的知道：我们知道我们不知道；但是还有我们不知道的不知道。</p>
 
       
     </div>
