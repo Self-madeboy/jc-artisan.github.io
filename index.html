@@ -70,6 +70,42 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-技术待做" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/jc-artisan.github.io/2021/03/27/%E6%8A%80%E6%9C%AF%E5%BE%85%E5%81%9A/" class="article-date">
+  <time datetime="2021-03-27T02:03:03.000Z" itemprop="datePublished">2021-03-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/jc-artisan.github.io/2021/03/27/%E6%8A%80%E6%9C%AF%E5%BE%85%E5%81%9A/">技术待做</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jc-artisan.github.io/2021/03/27/%E6%8A%80%E6%9C%AF%E5%BE%85%E5%81%9A/" data-id="ckmr3af740000oowc8vyp8zvt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-工作总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/jc-artisan.github.io/2021/02/02/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="article-date">
@@ -206,6 +242,17 @@
 <li>maven导出资源问题(配置文件没有放在resource要改设置)</li>
 </ol>
 <h1 id="2021-03-14"><a href="#2021-03-14" class="headerlink" title="2021-03-14"></a>2021-03-14</h1><p>@PathVariable和@RequestParam的区别我觉得就是RequestParam没有在url隐藏参数</p>
+<h1 id="2021-03-16"><a href="#2021-03-16" class="headerlink" title="2021-03-16"></a>2021-03-16</h1><ol>
+<li>lombok引入出错会造成java实体类出现找不到该符号和没有该方法</li>
+<li>eurekasever引入springboot-web会报错 </li>
+<li>eurekaclient要有springboot-web</li>
+<li>网关配置uri: lb://SERVICE-HELLO 是在注册中心去找SERVICE-HELLO服务predicates:- Path=/service/** 然后映射service路径加上这个可以映射成功filters: - StripPrefix=1</li>
+<li>defaultZone 在微服务无效是因为pom.xml 文件少了 eureka-client的依赖</li>
+<li>elasticSearch 倒排索引</li>
+</ol>
+<h1 id="2021-3-17"><a href="#2021-3-17" class="headerlink" title="2021-3-17"></a>2021-3-17</h1><ol>
+<li>mybatis可以配多个环境，但是只能生效一个，<environment id=(环境id名字)></li>
+</ol>
 
       
     </div>
@@ -716,117 +763,6 @@ class iLike implements like{ == Lambda espression==like li=()-&gt;{....
 
 
   
-    <article id="post-数据库" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/jc-artisan.github.io/2020/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="article-date">
-  <time datetime="2020-09-13T02:13:48.000Z" itemprop="datePublished">2020-09-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/jc-artisan.github.io/2020/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>排序案例：<pre><code>1 asc 升序  desc 降序
-2 order by 子句支持单个字段，多个字段，表达式，函数，别名
-3 order by 一般放在查询语句的后面，limit除外
-案例：查询部门编号&gt;=90  按入职时间排序
-select * 
-from employees
-where  department_id &gt;=90
-order by hiredata asc ;
-案例：按年薪的高低显示员工的信息和年薪
-select * , salary*12x(1+ifnull(commisson_pct,0)) 年薪
-from  employees 
-order by salary*12x(1+ifnull(commisson_pct,0)) desc;//可以用别名 年薪
-案例：按姓名的长度显示员工的姓名和工资
-select length(last_name)  字节长度，last_name,salary
-from employees
-order by length(last_name) desc;
-案例：查询员工信息，要求按工资升序，员工编号降序
-select *
-from employees 
-order by salary asc,employe_id desc;</code></pre></li>
-<li>常见函数 ：类似Java的方法，将逻辑封装在方法中，对外暴露方法名  隐藏了实现细节，提高代码重用性 </li>
-</ul>
-<ol>
-<li>调用方法 ：select 函数名（实参列表） from 表名</li>
-<li>特点：函数名，函数功能</li>
-<li>分类：单行函数（有返回值）  concat，length，ifnull ； 分组函数（主要做统计）/统计函数/聚合函数</li>
-</ol>
-<ul>
-<li><p>字符函数：<br>length：获取参数值得字节个数<br>concat：拼接字符串<br>upper lower：大小写<br>substr substring：substr（“李莫愁爱上了陆展元”，6）输出：了陆展元 <em>索引从1开始</em>  substr（“李莫愁爱上了陆展元”，1,3）输出：李莫愁  3 是字符长度</p>
-<pre><code>案例：姓名中首字符大写，其他小写，用_拼接
-select concat(upper(substr(last_name,1,1)),&quot;_&quot;,lower(substr(last_name,2))) from employees</code></pre><p>instr ： select instr(“杨不悔爱上了殷六侠”,“殷六侠”) 返回子串第一次出现的索引，找不到返回0<br>trim： select trim（a from “aaaa张翠山AAAA“）  去掉前后的a<br>Lpad：select Lpad (“殷素素”,10,”*”)  用指定字符左填充   rpad右填充<br>replace：select replace(“张无忌爱上了周芷若”.”周芷若”,”赵敏”)</p>
-</li>
-<li><p>数学函数<br>round 四舍五入</p>
-</li>
-<li><p>日期函数<br>now() 返回当前系统时间  select now();<br>str_to_data(“1999-09-21”,”%y-%m-%d”) 按自己想要的格式返回日期字符串</p>
-</li>
-</ul>
-<p>curdata() 返回系统当期日期，不包含时间<br>其他函数 ：version（） database（）<br>流程控制函数：<br>            if函数： if else 的效果<br>            select  last_name,commission_pact is null,”没奖金，呵呵”，”有奖金，嘻嘻”） from employees<br>            case :1 java的switch case 的效果<br>            案例：查询员工工资 要求：部门号==30，实现的工资为1.1倍 部门号==40，实现的工资为1.2倍 ….<br>            select salary 原始工资 ，depart_id<br>            case depart_id<br>            when 30 then salary*1.1 ;<br>            ….<br>            else salary<br>            end</p>
-<pre><code>多重if：
-case  什么都不写
-when   条件一  then  要显示的值或者语句
-when   条件二  then  要显示的值或者语句
-......
-else 要显示的值或者语句
-end </code></pre><p> 分组函数（主要做统计）/统计函数/聚合函数：sum ，avg，max，min，count  都可以忽略null<br>     sum avg 一般用于处理数值型   max min count 可以处理任何类型<br>            案例：查询哪个部门的员工数&gt;2<br>            select count(<em>),department_id<br>            from employees<br>            group by depart_id<br>            having count(</em>)&gt;2;</p>
-<ul>
-<li>分组函数总结  语法：select 分组函数，列（要求出现在group by 的后面）<pre><code>from 表
-where 筛选条件
-group by 分组的列表
-order by 子句</code></pre>注意：<pre><code>查询列表必须特殊，要求是分组函数和group by 后出现的字段</code></pre>特点： 分组查询的筛选分两类<pre><code>分组前筛选   原始表         group by 子句前（where）
-分组后筛选   分组后结果集   group by 子句后（having）</code></pre></li>
-</ul>
-<ol>
-<li>分组函数做条件肯定放having子句中</li>
-<li>能用分组前筛选，优先考虑分组前</li>
-<li>多个字段分组 将多个字段放group后面，逗号隔开就行</li>
-</ol>
-<ul>
-<li>连接查询，当有多个涉及的时候，就用连接查询<br>笛卡尔乘积：表一 m行 表二 n行 结果集=m*n行 完全连接<br>发生原因：没有有效连接条件<pre><code>案例：select name，boyname
-from boys，beauty
-where beauty.boyfriend_id=boys.id;</code></pre></li>
-</ul>
-<ol>
-<li>连接查询的分类：1按功能分类（内连接（等值连接，非等值连接，自连接），外连接（左外连接，右外连接，全外连接），交叉连接）</li>
-</ol>
-<ul>
-<li>等值连接 ：1 多表等值连接的结果为多表的交集部分<br>2 N表连接，需要n-1个连接条件<br>3 多表的顺序没有要求，一般需要其别名</li>
-<li>非等值连接<pre><code>案例：查询员工的工资和工资级别
-select salary,grade_level
-from employees e,job_grades g
-where salary between g.&quot;lowest_sal&quot; and g.&quot;highest_sal&quot;</code></pre></li>
-<li>自连接：相当于等值连接，自己连接自己</li>
-<li>子查询  分类：按子查询出现的位置：select（仅标量）,from （表）,where或having（标量或列行），exists 相关子查询  （表）<br>按结果集的行列数不同： 标量子查询（结果集只有一行一列）<br>列子查询（结果集只有一列多行）<br>行子查询（结果集有一行多列）<br>表子查询（结果集为多行多列）</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://jc-artisan.github.io/2020/09/13/%E6%95%B0%E6%8D%AE%E5%BA%93/" data-id="ckicgr9dy0000d4wchwsp8wzz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -850,7 +786,7 @@ where salary between g.&quot;lowest_sal&quot; and g.&quot;highest_sal&quot;</cod
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/07/">July 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/07/">July 2020</a></li></ul>
     </div>
   </div>
 
@@ -861,6 +797,10 @@ where salary between g.&quot;lowest_sal&quot; and g.&quot;highest_sal&quot;</cod
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/jc-artisan.github.io/2021/03/27/%E6%8A%80%E6%9C%AF%E5%BE%85%E5%81%9A/">技术待做</a>
+          </li>
         
           <li>
             <a href="/jc-artisan.github.io/2021/02/02/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">工作总结</a>
@@ -876,10 +816,6 @@ where salary between g.&quot;lowest_sal&quot; and g.&quot;highest_sal&quot;</cod
         
           <li>
             <a href="/jc-artisan.github.io/2020/12/18/%E6%95%8F%E6%8D%B7-%E4%B8%80%E4%B8%AA%E5%BC%80%E5%8F%91%E4%BC%9F%E5%A4%A7%E8%BD%AF%E4%BB%B6%E7%9A%84%E6%96%B9%E5%BC%8F-%E8%AF%91%E6%96%87/">敏捷-一个开发伟大软件的方式</a>
-          </li>
-        
-          <li>
-            <a href="/jc-artisan.github.io/2020/12/18/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BE%AE%E6%9C%8D%E5%8A%A1-%E8%AF%91%E6%96%87/">什么是微服务-译文</a>
           </li>
         
       </ul>

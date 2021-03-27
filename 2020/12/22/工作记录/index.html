@@ -15,7 +15,7 @@
 <meta property="og:description" content="12-21Java版本不匹配 改project structure和setting里面的Java compiler 版本心得：没有做好的事情不要说搞好了 微服务：有一个网关，所有服务都在注册中心注册，当服务都注册了，注册中心停掉也可以用。只是不能更新—和网络里面的路由器一样，我认为就像是每个服务路由表一样，网关也在注册中心注册。  12-23心得：工程师做事情要严谨，要对自己写的代码负责。字符串转">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-22T12:34:55.000Z">
-<meta property="article:modified_time" content="2021-03-14T02:10:57.009Z">
+<meta property="article:modified_time" content="2021-03-17T12:38:44.597Z">
 <meta property="article:author" content="jc">
 <meta name="twitter:card" content="summary">
   
@@ -142,6 +142,17 @@
 <li>maven导出资源问题(配置文件没有放在resource要改设置)</li>
 </ol>
 <h1 id="2021-03-14"><a href="#2021-03-14" class="headerlink" title="2021-03-14"></a>2021-03-14</h1><p>@PathVariable和@RequestParam的区别我觉得就是RequestParam没有在url隐藏参数</p>
+<h1 id="2021-03-16"><a href="#2021-03-16" class="headerlink" title="2021-03-16"></a>2021-03-16</h1><ol>
+<li>lombok引入出错会造成java实体类出现找不到该符号和没有该方法</li>
+<li>eurekasever引入springboot-web会报错 </li>
+<li>eurekaclient要有springboot-web</li>
+<li>网关配置uri: lb://SERVICE-HELLO 是在注册中心去找SERVICE-HELLO服务predicates:- Path=/service/** 然后映射service路径加上这个可以映射成功filters: - StripPrefix=1</li>
+<li>defaultZone 在微服务无效是因为pom.xml 文件少了 eureka-client的依赖</li>
+<li>elasticSearch 倒排索引</li>
+</ol>
+<h1 id="2021-3-17"><a href="#2021-3-17" class="headerlink" title="2021-3-17"></a>2021-3-17</h1><ol>
+<li>mybatis可以配多个环境，但是只能生效一个，<environment id=(环境id名字)></li>
+</ol>
 
       
     </div>
@@ -191,7 +202,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/07/">July 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/jc-artisan.github.io/archives/2020/07/">July 2020</a></li></ul>
     </div>
   </div>
 
@@ -202,6 +213,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/jc-artisan.github.io/2021/03/27/%E6%8A%80%E6%9C%AF%E5%BE%85%E5%81%9A/">技术待做</a>
+          </li>
         
           <li>
             <a href="/jc-artisan.github.io/2021/02/02/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">工作总结</a>
@@ -217,10 +232,6 @@
         
           <li>
             <a href="/jc-artisan.github.io/2020/12/18/%E6%95%8F%E6%8D%B7-%E4%B8%80%E4%B8%AA%E5%BC%80%E5%8F%91%E4%BC%9F%E5%A4%A7%E8%BD%AF%E4%BB%B6%E7%9A%84%E6%96%B9%E5%BC%8F-%E8%AF%91%E6%96%87/">敏捷-一个开发伟大软件的方式</a>
-          </li>
-        
-          <li>
-            <a href="/jc-artisan.github.io/2020/12/18/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BE%AE%E6%9C%8D%E5%8A%A1-%E8%AF%91%E6%96%87/">什么是微服务-译文</a>
           </li>
         
       </ul>
